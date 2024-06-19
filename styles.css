@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    transition: background-color 0.5s ease;
 }
 
 .container {
@@ -14,6 +15,15 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+    0% { background-color: #ffadad; }
+    25% { background-color: #ffd6a5; }
+    50% { background-color: #fdffb6; }
+    75% { background-color: #caffbf; }
+    100% { background-color: #9bf6ff; }
 }
 
 #timer {
@@ -26,14 +36,17 @@ body {
     margin: 5px;
     font-size: 1rem;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
 }
 
 #quotes {
     margin-top: 20px;
     font-style: italic;
-}
-
-.dark-mode {
-    background-color: #2c2c2c;
-    color: #f0f0f0;
 }
